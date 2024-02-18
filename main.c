@@ -66,7 +66,6 @@ void setup_console(int t)
 	{
 		if(t)
 		{
-			printf("setup console\n");
 			tcgetattr(0, &old_termios);
 			memcpy(&our_termios, &old_termios, sizeof(struct termios));
 			our_termios.c_lflag &= !(ECHO | ICANON);
@@ -74,7 +73,6 @@ void setup_console(int t)
 		}
 		else
 		{
-			//printf("restore console\n");
 			tcsetattr(0, TCSANOW, &old_termios);
 		}
 	}
