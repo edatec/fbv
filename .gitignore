@@ -1,3 +1,42 @@
-*.o
-config.*
+# archives
+*.zip
+*.tar.gz
+*.tgz
+
+# backups
+*~
+
+# autotools
+Makefile
+Makefile.in
+compile
+aclocal.m4
+autom4te.cache/
+config.guess
+config.h
+config.h.in
+config.log
+config.status
+config.sub
+configure
+install-sh
+missing
+stamp-h1
+.dirstamp
+
+# objects
 fbv
+*.exe
+*.o
+*.gcda
+*.gcno
+*.gcov
+
+# projects
+*.dst
+*.epr
+*.geany
+
+# specific
+archive/
+

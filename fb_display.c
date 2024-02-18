@@ -114,6 +114,8 @@ int getCurrentRes(int *x, int *y)
 	return 0;
 }
 
+#define DEFAULT_FRAMEBUFFER "/dev/fb0"
+
 int openFB(const char *name)
 {
 	int fh;
