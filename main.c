@@ -55,7 +55,12 @@ static char inline_help[] =
 	"n		Rotate the image 90 degrees left\n"
 	"m		Rotate the image 90 degrees right\n"
 	"p		Disable all transformations\n"
+    "q      quit\n"
+    "y      quit with exit 0\n"
+    "n     quit with exit 1\n"
 	"h		Help and image information\n";
+
+static int g_state = 0;
 
 void setup_console(int t)
 {
@@ -462,6 +467,14 @@ identified:
 			switch(c)
 			{
 				case EOF:
+                case 'n':
+					ret = 0;
+                    g_state = 1;
+					goto done;
+                case 'y':
+					ret = 0;
+                    g_state = 0
+					goto done;
 				case 'q':
 					ret = 0;
 					goto done;
@@ -634,6 +647,9 @@ void help(char *name)
 		   " m          : Rotate the image 90 degrees right\n"
 		   " p          : Disable all transformations\n"
 		   " h          : Help and image information\n"
+           " q          : quit \n"
+           " y          : quit with exit 0\n"
+           " n          : quit with exit 1\n"
 		   " Copyright (C) 2000 - 2004 Mateusz Golicz, Tomasz Sterna.\n"
 		   " Copyright (C) 2013 yanlin, godspeed1989@gitbub\n", name);
 }
@@ -798,6 +814,6 @@ int main(int argc, char **argv)
 	if(opt_orientation && (opt_orientation > 3 || opt_orientation < 0))
 		opt_orientation = 0;
 
-	return 0;
+	return g_state;
 }
 
