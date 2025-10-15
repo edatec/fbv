@@ -473,7 +473,7 @@ identified:
 					goto done;
                 case 'y':
 					ret = 0;
-                    g_state = 0
+                    g_state = 0;
 					goto done;
 				case 'q':
 					ret = 0;
