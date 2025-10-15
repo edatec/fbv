@@ -52,12 +52,12 @@ static char inline_help[] =
 	"t		Toggle fitting the image vertically\n"
 	"i		Toggle respecting the image aspect on/off\n"
 	"+, -, 0		Increase, decrease and reset zoom\n"
-	"n		Rotate the image 90 degrees left\n"
+	"b		Rotate the image 90 degrees left\n"
 	"m		Rotate the image 90 degrees right\n"
 	"p		Disable all transformations\n"
     "q      quit\n"
     "y      quit with exit 0\n"
-    "n     quit with exit 1\n"
+    "n      quit with exit 1\n"
 	"h		Help and image information\n";
 
 static int g_state = 0;
@@ -563,7 +563,7 @@ identified:
 					zoom = 1;
 					retransform = 1;
 					break;
-				case 'n':
+				case 'b':
 					transform_rotation -= 1;
 					if(transform_rotation < 0)
 						transform_rotation += 4;
@@ -643,7 +643,7 @@ void help(char *name)
 		   " t          : Toggle fitting the image vertically\n"
 		   " i          : Toggle respecting the image aspect on/off\n"
 		   " +, -, 0    : Increase, decrease and reset zoom\n"
-		   " n          : Rotate the image 90 degrees left\n"
+		   " b          : Rotate the image 90 degrees left\n"
 		   " m          : Rotate the image 90 degrees right\n"
 		   " p          : Disable all transformations\n"
 		   " h          : Help and image information\n"
